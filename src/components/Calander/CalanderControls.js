@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Button, Select } from 'antd';
 import { CalanderMenu } from 'components/Styles/Calander.style';
 import { useHistory } from 'react-router-dom';
-import AppointmentModal from './AppointmentModal';
+import AppointmentModal from '../Appointment/AppointmentModal';
+import CreateAppointment from 'components/Appointment/CreateAppointment';
 
 
 function CalanderControls(props) {
@@ -92,7 +93,11 @@ function CalanderControls(props) {
                 <Option value="2021">2021</Option>
                 <Option value="2022">2022</Option>
             </Select>
-            <AppointmentModal isModalVisible = {isModalVisible} setModalVisibleHandler = {setIsModalVisible}/>
+
+            <AppointmentModal isModalVisible = {isModalVisible} setModalVisibleHandler = {setIsModalVisible}>
+                <CreateAppointment/>
+            </AppointmentModal>
+
             <Button type="primary" onClick={showModalHandler}>Create Appointment</Button>
         </CalanderMenu>
     )

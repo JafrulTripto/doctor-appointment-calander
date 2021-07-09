@@ -17,12 +17,12 @@ const AppointmentModal = (props) => {
     props.setModalVisibleHandler(false);
   };
 
+  console.log(props);
+
   return (
     <>
       <Modal title="Basic Modal" visible={props.isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        {props.children}
       </Modal>
     </>
   );
