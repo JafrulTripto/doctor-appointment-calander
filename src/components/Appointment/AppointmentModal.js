@@ -1,30 +1,35 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'antd';
+import React from 'react';
+import { Button, Modal } from 'antd';
 
 const AppointmentModal = (props) => {
-    
+
   //const [isModalVisible, setIsModalVisible] = useState(false);
 
-//   const showModal = () => {
-//     setIsModalVisible(true);
-//   };
+  //   const showModal = () => {
+  //     setIsModalVisible(true);
+  //   };
 
-  const handleOk = () => {
-    props.setModalVisibleHandler(false);
-  };
 
-  const handleCancel = () => {
-    props.setModalVisibleHandler(false);
-  };
 
-  console.log(props);
+
+
 
   return (
-    <>
-      <Modal title="Basic Modal" visible={props.isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-        {props.children}
-      </Modal>
-    </>
+    <Modal
+      title={props.title}
+      onCancel={props.modalCancelHandler}
+      footer={[
+        <Button key="cancel" onClick={props.modalCancelHandler}>
+          Cancel
+        </Button>,
+        <Button form="appointmentForm" key="submit" htmlType="submit" type={'primary'}>
+          Submit
+        </Button>
+      ]}
+      visible={props.isModalVisible}
+    >
+      {props.children}
+    </Modal>
   );
 };
 

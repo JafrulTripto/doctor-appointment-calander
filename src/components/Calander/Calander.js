@@ -48,7 +48,7 @@ const Calander = () => {
                                 height="140px"
                                 selected={moment().format("YYYY-MM-DD") === dateObj.format("YYYY-MM-DD") ? true : false}
                                 shouldHover={dateObj.month() === month && moment().format("YYYY-MM-DD") !== dateObj.format("YYYY-MM-DD") ? true : false}
-                                backgroundColor={dateObj.month() === month ? "#F9F9F9" : "#CDF0EA"}>
+                                backgroundColor={dateObj.month() === month ? "#F9F9F9" : "#DDDDDD"}>
                                 {dateObj.format("D")}
                             </CalanderCard>
                         )
@@ -66,7 +66,7 @@ const Calander = () => {
                     <MainCalander showCalanderHandler={showCalander} />
                 </Route>
                 <Route path="/year/:year/month/:month" exact>
-                    <MainCalander showCalanderHandler={showCalander} />
+                    <MainCalander showCalanderHandler={showCalander} selectedValue={selectedValueHandler}/>
                 </Route>
             </Switch>
 

@@ -68,18 +68,20 @@ function CalanderControls(props) {
     const { Option } = Select;
     const history = useHistory();
     function handleValueChange(value, type) {
-        if (type==="year") {
+        if (type === "year") {
             props.getSelectedValue(value, type);
             history.push(`/year/${value}/month/${props.currentMonth}`)
         } else {
             props.getSelectedValue(value, type);
             history.push(`/year/${props.currentYear}/month/${value}`)
-        } 
+        }
     }
 
-    
 
-    //console.log(props.currentYear);
+    const handleCancel = () => {
+        setIsModalVisible(false);
+        console.log("hello");
+      };
     return (
         <CalanderMenu>
             <Select defaultValue={props.currentMonth} style={{ width: 120 }} onChange={(e) => handleValueChange(e, 'month')}>
@@ -94,8 +96,12 @@ function CalanderControls(props) {
                 <Option value="2022">2022</Option>
             </Select>
 
-            <AppointmentModal isModalVisible = {isModalVisible} setModalVisibleHandler = {setIsModalVisible}>
-                <CreateAppointment/>
+            <AppointmentModal
+                title="Create Appointment"
+                isModalVisible={isModalVisible}
+                modalCancelHandler={handleCancel}
+                setModalVisibleHandler={setIsModalVisible}>
+                <CreateAppointment modalCancelHandler={handleCancel}/>
             </AppointmentModal>
 
             <Button type="primary" onClick={showModalHandler}>Create Appointment</Button>
