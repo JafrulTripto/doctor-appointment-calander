@@ -13,10 +13,7 @@ export const CalanderCard = styled.div`
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: ${(props) =>!props.selected ? props.backgroundColor : "#2a9d8f"};
     font-weight:${(props)=>props.fontWeight} ;
-    &:hover{
-        background-color:${(props) => props.shouldHover ? "#264653" : ""} ;
-        color: white;
-    }
+   
 `
 export const CalanderWrapper = styled.div`
     display: flex;
@@ -65,4 +62,7 @@ export const Appointment = styled.div`
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    &:hover{
+        background-color:#FF616D ;
+    }
 `
