@@ -15,7 +15,7 @@ function MainCalander(props) {
     }, [params, props])
     return (
         <CalanderBody>
-            <WeekDayWrapper>{weekDays.map(day => <CalanderCard fontWeight="bold" key={day}>{day}</CalanderCard>)}</WeekDayWrapper>
+            <WeekDayWrapper>{weekDays.map(day => <CalanderCard fontWeight="bold" selected={true} backgroundColor="#086788" key={day}>{day}</CalanderCard>)}</WeekDayWrapper>
             <WeekWrapper>{props.showCalanderHandler()}</WeekWrapper>
         </CalanderBody>
     )

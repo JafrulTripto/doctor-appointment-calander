@@ -5,16 +5,17 @@ export const CalanderCard = styled.div`
     height: ${(props)=>props.height};
     width: 150px;
     /* border: 0.5px solid blue; */
-    padding: 5px;
+    padding: 5px 10px 5px;
     margin: 4px;
     border-radius: 5px;
     font-weight: bold;
     color:  ${(props) =>props.selected ? "white" : "black"};
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: ${(props) =>!props.selected ? props.backgroundColor : "#1A535C"};
+    background-color: ${(props) =>!props.selected ? props.backgroundColor : "#2a9d8f"};
     font-weight:${(props)=>props.fontWeight} ;
     &:hover{
-        background-color:${(props) => props.shouldHover ? "#F7FFF7" : ""} ;
+        background-color:${(props) => props.shouldHover ? "#264653" : ""} ;
+        color: white;
     }
 `
 export const CalanderWrapper = styled.div`
@@ -30,6 +31,7 @@ export const CalanderBody = styled.div`
     height: 804px;
     border-radius: 5px;
     overflow-y: auto;
+    background-color: #eff1f3;
 `
 export const CalanderMenu = styled.div`
     padding: 10px;
@@ -52,7 +54,7 @@ export const WeekDayWrapper = styled.div`
     z-index: 1000;
 `
 export const Appointment = styled.div`
-    background-color: #4ECDC4;
+    background-color: #e63946;
     padding: 2px 5px;
     font-size: 12px;
     text-align: center;

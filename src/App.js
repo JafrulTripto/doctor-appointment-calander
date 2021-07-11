@@ -1,12 +1,13 @@
 import React from 'react';
 import Calander from 'components/Calander/Calander.js';
-import './App.css'
+
+import { AppContainer } from 'components/Styles/App.style';
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
         <Calander />
-    </div>
+    </AppContainer>
   );
 }
 

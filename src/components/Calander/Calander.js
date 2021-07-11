@@ -84,7 +84,7 @@ const Calander = () => {
                     </Appointment>
                 );
             })
-        }else {
+        } else {
             return null;
         }
     }
@@ -115,13 +115,15 @@ const Calander = () => {
 
     return (
         <Fragment>
-            {appointmentData ? <AppointmentModal
-                title={`Appointment (${appointmentData.date})`}
-                isModalVisible={showAppointmentDetail}
-                isFooter={false}
-                modalCancelHandler={closeAppointmentDetailHandler}
-            //modalCancelHandler={handleCancel}
-            > <ShowAppointment appointment={appointmentData} /></AppointmentModal> : null}
+            {appointmentData ?
+                <AppointmentModal
+                    title={`Appointment (${moment(appointmentData.date).format("Do MMMM YYYY")})`}
+                    isModalVisible={showAppointmentDetail}
+                    isFooter={false}
+                    modalCancelHandler={closeAppointmentDetailHandler}
+                >
+                    <ShowAppointment appointment={appointmentData} />
+                </AppointmentModal> : null}
 
 
             <CalanderWrapper flexDirection={"column"}>

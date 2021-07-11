@@ -109,7 +109,7 @@ function CalanderControls(props) {
                 <CreateAppointment modalCancelHandler={handleCancel} form={appointmentForm} />
             </AppointmentModal>
 
-            <Button type="primary" onClick={showModalHandler} style={{ background: "#ea526f", border: "#ea526f" }} icon={<PlusOutlined />}>Create Appointment</Button>
+            <Button type="primary" onClick={showModalHandler} style={{ background: "#e63946", border: "#ea526f" }} icon={<PlusOutlined />}>Create Appointment</Button>
         </CalanderMenu>
     )
 }
