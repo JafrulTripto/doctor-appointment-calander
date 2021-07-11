@@ -19,7 +19,9 @@ function CreateAppointment(props) {
         },
     };
 
-    
+    function disabledDate(current) {
+        return current && current < moment().endOf('day');
+      }
 
     const onFinish = (appointment) => {
 
@@ -71,7 +73,7 @@ function CreateAppointment(props) {
                 name="date"
                 rules={[{ required: true, message: 'Date is required' }]}
             >
-                <DatePicker style={{ width: "100%" }} />
+                <DatePicker disabledDate={disabledDate} style={{ width: "100%" }} />
             </Form.Item>
             <Form.Item
                 name="time"
